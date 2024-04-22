@@ -59,7 +59,7 @@ Si no es asi, deberemos intentar conectarnos de nuevo al wifi.
 
 ## 🛠️ Instalación <a name="id3"></a>
 
-Instalamos el __Supervised Installer__:
+Instalamos el __Supervised Installer__ como sudo:
 ```sh
 sudo su
 ```
