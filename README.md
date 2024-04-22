@@ -96,18 +96,27 @@ for pkg in docker.io docker-doc docker-compose podman-docker containerd runc; do
 
 Agregamos el repositorio `apt` de __Docker__
 ```sh
-# Add Docker's official GPG key:
 sudo apt-get update
+```
+```sh
 sudo apt-get install ca-certificates curl
+```
+```sh
 sudo install -m 0755 -d /etc/apt/keyrings
+```
+```sh
 sudo curl -fsSL https://download.docker.com/linux/debian/gpg -o /etc/apt/keyrings/docker.asc
+```
+```sh
 sudo chmod a+r /etc/apt/keyrings/docker.asc
-
-# Add the repository to Apt sources:
+```
+```sh
 echo \
   "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/debian \
   $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
   sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+```
+```sh
 sudo apt-get update
 ```
 
@@ -120,9 +129,12 @@ Verificamos que se haya instalado bien
 
 ```sh
 exit
-docker run hello-world
 ```
 *Hacemos exit, para salir del sudo. Si no nos funciona debemos agregar un grupo de docker, como explica [aquí](https://docs.docker.com/engine/install/linux-postinstall/)*
+```sh
+docker run hello-world
+```
+
 
 ### Descargamos OS Agent
 
