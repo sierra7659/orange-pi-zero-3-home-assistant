@@ -155,7 +155,7 @@ gdbus introspect --system --dest io.hass.os --object-path /io/hass/os
 Deberia aparecer varias interfaces, no hay que realizar nada mas.
 
 
-### In⚠️stalamos Home Assistant Supervised Debian Package
+### Instalamos Home Assistant Supervised Debian Package
 ```sh
 wget -O homeassistant-supervised.deb https://github.com/home-assistant/supervised-installer/releases/latest/download/homeassistant-supervised.deb
 ```
@@ -163,7 +163,7 @@ wget -O homeassistant-supervised.deb https://github.com/home-assistant/supervise
 sudo apt install ./homeassistant-supervised.deb
 ```
 
-📝 Saldrá un menu que debemos seleccionar con las flechas del teclado.
+⚠️📝 Saldrá un menu que debemos seleccionar con las flechas del teclado.
 `Raspberrypi3-64`
 
 Tras esto, puede que de un error del estilo de 
