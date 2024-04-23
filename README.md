@@ -39,7 +39,7 @@ Nos aseguramos que este el nuestro.
 
 3 - **IMPORTANTE** cambiar nombre de nuestro wifi 2.4GHz, por nuestro nombre, y contraseña, debe ir entre comillas " (Para escribir estas comillas **SHIFT + 2**)
 ```sh
-sudo nmcli dev wifi connect NOMBRE_DE_NUESTRO_WIFI password "CONTRASEÑA"
+sudo nmcli dev wifi connect "NOMBRE_DE_NUESTRO_WIFI" password "CONTRASEÑA"
 ```
 
 4 - Asegurarnos que nos hemos conectado
