@@ -280,7 +280,7 @@ https://192.168.0.33:8123
 
 25 - Una vez accedamos, iremos a **Ajustes** > **Sistema** > **Red** > **URL de Home Assistant** > En Internet escribimos nuestro dominio de DuckDNS (Ej. https://haorangepi.duckdns.org) 
 
-26 - Deberemos redireccionar los puertos, desde el exterior 443 a 8123
+26 - Deberemos redireccionar los puertos, desde el exterior 443 a 8123 local
 
 # Créditos
 - https://www.youtube.com/watch?v=-ujrSWD4W0o&ab_channel=JohnDo (Video Soporte del proceso)
