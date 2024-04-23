@@ -197,7 +197,7 @@ http://192.168.0.33:8123
 
 Esperamos a que acabe de instalar, y listo!
 
-# Configuración de acceso externo a traves de DuckDNS 🐥
+# Configuración de acceso externo a traves de DuckDNS 🐥 <a name="id4"></a>
 Una vez tengamos instalado y configurado los parametros mas básicos de **Home Assistant**.
 
 Procedemos a lo siguiente:
