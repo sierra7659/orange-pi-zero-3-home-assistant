@@ -4,6 +4,7 @@
 1. [Preparativos](#id1)
 2. [Configuración de red](#id2)
 3. [Instalación](#id3)
+4. [Configuración de acceso externo a traves de DuckDNS](#id4)
 
 
 ## 🚧 Preparativos <a name="id1"></a>
@@ -196,6 +197,90 @@ http://192.168.0.33:8123
 
 Esperamos a que acabe de instalar, y listo!
 
+# Configuración de acceso externo a traves de DuckDNS 🐥
+Una vez tengamos instalado y configurado los parametros mas básicos de **Home Assistant**.
+
+Procedemos a lo siguiente:
+
+1 - Ir a nuestro **Usuario** > Activamos **Modo Avanzado**
+
+2 - Ahora vamos a **Ajustes** > **Complementos** > **Tienda de Complementos**
+
+3 - Buscamos **File Editor**, clicamos e instalamos.
+
+Una vez instalado debe aparecer algo asi:
+<img width="1175" alt="image" src="https://github.com/sierra7659/orange-pi-zero-3-home-assistant/assets/50959412/322a08eb-83e1-4327-95c6-03fd9ef86978">
+_Debemos activar **Vigilancia** y **Mostrar en Panel Lateral**_
+
+4 - Volvemos a la **Tienda de complementos**
+
+5 - Buscamos **DuckDNS**
+
+6 - Instalamos y NO iniciamos
+
+7 - Vamos a https://www.duckdns.org/
+
+8 - Nos registramos
+<img width="922" alt="image" src="https://github.com/sierra7659/orange-pi-zero-3-home-assistant/assets/50959412/49244ee7-087d-4da6-a162-036e0fd1c76a">
+
+9 - Nos aparecerá esta pantalla
+<img width="1326" alt="DuckDNS" src="https://github.com/sierra7659/orange-pi-zero-3-home-assistant/assets/50959412/017110cc-048a-4b9e-884b-852b0d068f44">
+
+10 - Debemos introducir el dominio que deseamos, para acceder a nuestro **Home Assistant** desde el exterior. Por ejemplo *haorangepi* **IMPORTANTE** Poner nombre distinto.
+
+11 - Damos a create y nos ha generado en Domains el dominio, con nuestra IP Pública.
+
+12 - Volvemos a **Home Assitant** , clicamos en el Complemento de **DuckDNS**, vamos a la pestaña **Configuración**
+<img width="1060" alt="Captura de pantalla 2024-04-23 a las 13 12 01" src="https://github.com/sierra7659/orange-pi-zero-3-home-assistant/assets/50959412/ed17d9e5-0c84-4a37-89db-89aa07ffc95c">
+
+13 - Añadimos en Domains el nombre que hemos agregado en el paso 10. Por ejemplo: 
+__haorangepi.duckdns.org__
+
+14 - En **Token** tenemos que agregar el Token que hay en **DuckDNS** **IMPORTANTE** NO COMPARTIR ESTE TOKEN CON NADIE
+
+15 - En el apartado de **Let's Encrypt** 
+debemos poner 
+```
+accept_terms: true
+```
+
+16 - Damos a **Guardar**
+
+17 - Vamos a **Herramientas de Desarrollador**, damos a Reiniciar. Y posteriormente **Reiniciar el Sistema**
+<img width="494" alt="image" src="https://github.com/sierra7659/orange-pi-zero-3-home-assistant/assets/50959412/f1694531-1fcb-40a9-bada-f5d8afdab100">
+
+18 - Esperamos a que reincie. Vamos a **File Editor**, damos al **Icono de carpeta**
+
+19 - Buscamos **configuration.yaml**
+
+
+<img width="314" alt="File Editor" src="https://github.com/sierra7659/orange-pi-zero-3-home-assistant/assets/50959412/55fae7ec-f82b-4b7d-85cb-e51aff237a2d">
+
+20 - Al comienzo del archivo pegamos esto:
+```yaml
+# DuckDNS
+http:
+  ssl_certificate: /ssl/fullchain.pem
+  ssl_key: /ssl/privkey.pem
+```
+
+21 - Guardamos dando al icono del Disquete
+<img width="61" alt="image" src="https://github.com/sierra7659/orange-pi-zero-3-home-assistant/assets/50959412/154f6dd4-507d-485b-a2e3-0e8cc14d9a3c">
+
+22 - Vamos a **Herramientas de Desarrollador** y clicamos en **Verificar Configuración**
+
+23 - Si aparece bien, deberemos **reinciar de nuevo**.
+
+24 - Despues de esto para acceder ahora tendremos que acceder por https, es decir en vez de http.
+Ej. 
+
+```http
+https://192.168.0.33:8123
+```
+
+25 - Una vez accedamos, iremos a **Ajustes** > **Sistema** > **Red** > **URL de Home Assistant** > En Internet escribimos nuestro dominio de DuckDNS (Ej. https://haorangepi.duckdns.org) 
+
+26 - Deberemos redireccionar los puertos, desde el exterior 443 a 8123
 
 # Créditos
 - https://www.youtube.com/watch?v=-ujrSWD4W0o&ab_channel=JohnDo (Video Soporte del proceso)
