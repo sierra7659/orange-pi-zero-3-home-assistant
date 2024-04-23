@@ -59,6 +59,14 @@ Si no es asi, deberemos intentar conectarnos de nuevo al wifi.
 
 ## 🛠️ Instalación <a name="id3"></a>
 
+Desde aqui recomiendo usar SSH para poder ir copiando los comandos.
+Para acceder por ssh, abrimos un Terminal/Powershell:
+_cambiar 192.168.0.33 por la ip de Orange Pi Zero 3_
+```sh
+ssh orangepi@192.168.0.33
+```
+Nos pedirá contraseña (Contraseña `orangepi`) y si queremos crear un fingerprint, damos enter. 
+
 Instalamos el __Supervised Installer__ como sudo:
 ```sh
 sudo su
